@@ -1,26 +1,74 @@
+<<<<<<< HEAD
 
 # README
+=======
+# Book Lending Library
+>>>>>>> 207e50b (book_library)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Rails-based book lending library system that allows users to borrow and return books. The system keeps track of borrowing history and ensures books are available for lending.
 
-Things you may want to cover:
+## Features
+- Borrow and return books
+- Track lending history
+- Simple RESTful API for managing books and lending history
 
-* Ruby version
+## Setup
+### Prerequisites
+- Ruby 3.x
+- Rails 7.x
+- PostgreSQL (or SQLite for local testing)
 
-* System dependencies
+### Installation
+1. Clone the repo:
+   ```sh
+   git clone https://github.com/Muchire/book_library.git
+   cd book_lending_library
+   ```
 
-* Configuration
+2. Install dependencies:
+   ```sh
+   bundle install
+   ```
 
-* Database creation
+3. Set up the database:
+   ```sh
+   rails db:create db:migrate db:seed
+   ```
 
-* Database initialization
+4. Run the server:
+   ```sh
+   rails s
+   ```
 
-* How to run the test suite
+## Running Tests
+To run the test suite:
+```sh
+rails test
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## API Routes
+### Books
+- `GET /books` → List all books
+- `POST /books` → Add a new book
+- `PATCH /books/:id/return_book` → Return a borrowed book
 
-* Deployment instructions
+### Lending History
+- `POST /books/:id/borrowing_histories` → Borrow a book
+- `GET /borrowers/:borrower_name` → View borrowing history by borrower
 
+## Issues & Debugging
+- If `return_book_url` isn’t recognized, check your routes: `rails routes | grep return`
+- Database issues? Try `rails db:reset`
+
+## Future Improvements
+- Add user authentication
+- Implement notifications for due dates
+- Improve UI for better book management
+
+---
+
+<<<<<<< HEAD
 * ...
 
+=======
+>>>>>>> 207e50b (book_library)
